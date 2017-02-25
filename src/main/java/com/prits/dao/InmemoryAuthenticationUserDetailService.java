@@ -24,9 +24,9 @@ public class InmemoryAuthenticationUserDetailService implements AuthenticationUs
     @Override
     public UserDetails loadUserDetails(Authentication token) throws UsernameNotFoundException {
         UserDetails userDetails = null;
-        if("jimi".equalsIgnoreCase(token.getName())) {
+        if("admin".equalsIgnoreCase(token.getName())) {
             userDetails = getAdminUser(token.getName());
-        } else if ("fred".equalsIgnoreCase(token.getName())) {
+        } else if ("user".equalsIgnoreCase(token.getName())) {
             userDetails = getRegularUser(token.getName());
         }
         if(userDetails == null) {

@@ -81,5 +81,19 @@
   </dependencies>
   <build>
     <finalName>PreAuthDemo</finalName>
+    <plugins>
+    <plugin>
+      <groupId>org.mortbay.jetty</groupId>
+      <artifactId>maven-jetty-plugin</artifactId>
+      <configuration>
+        <userRealms>
+          <userRealm implementation="org.mortbay.jetty.security.HashUserRealm">
+            <name>DEFAULT</name>
+            <config>realm.properties</config>
+          </userRealm>
+        </userRealms>
+      </configuration>
+    </plugin>
+    </plugins>
   </build>
 </project>
